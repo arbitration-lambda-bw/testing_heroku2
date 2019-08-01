@@ -9,7 +9,7 @@ verify_ssl = true
 xgboost = "*"
 flask = "*"
 pandas = "*"
-category-encoders = "*"
+category-encoders = "==0.20.3"
 gunicorn = "*"
 
 [requires]
