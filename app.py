@@ -27,6 +27,7 @@ def create_app():
     
   @app.route('/api', methods=['POST'])
   def json():
+    hour = request.json["hour"]
     age = request.json["age"]
     race = request.json['race']
     sex = request.json['sex']
@@ -64,8 +65,8 @@ def create_app():
     results = []
     for state in states:
 
-        inputs = [state, night, age, race, sex, types]
-        pred_input = pd.DataFrame([inputs], columns=['states', 'night', 'subject_age', 'subject_race', 'subject_sex', 'type'] )
+        inputs = [state, hour, night, age, race, sex, types]
+        pred_input = pd.DataFrame([inputs], columns=['states', 'hour', 'night', 'subject_age', 'subject_race', 'subject_sex', 'type'] )
         pred_input_encoded = loaded_encoder.transform(pred_input)
         result = loaded_model.predict_proba(pred_input_encoded)
 
