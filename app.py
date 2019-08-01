@@ -66,7 +66,7 @@ def create_app():
     for state in states:
 
         inputs = [state, hour, night, age, race, sex, types]
-        pred_input = pd.DataFrame([inputs], columns=['states', 'hour', 'night', 'subject_age', 'subject_race', 'subject_sex', 'type'] )
+        pred_input = pd.DataFrame([inputs], columns=['state', 'hour', 'night', 'subject_age', 'subject_race', 'subject_sex', 'type'] )
         pred_input_encoded = loaded_encoder.transform(pred_input)
         result = loaded_model.predict_proba(pred_input_encoded)
 
