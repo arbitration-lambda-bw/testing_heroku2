@@ -23,7 +23,8 @@ def create_app():
 
   @app.route('/')
   def root():
-    pass
+    
+    return render_template("dfmap_html.html", title='Home', users=users)    
     
   @app.route('/api', methods=['POST'])
   def json():
